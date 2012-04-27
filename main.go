@@ -10,12 +10,16 @@ import (
 	"strings"
 )
 
-var agent = "gonoip/0.1 costinc@gmail.com"
-var ipfile = "/var/run/gonoip"
+var (
+	agent = "gonoip/0.1 costinc@gmail.com"
+	ipfile = "/var/run/gonoip"
+)
 
-var infoLog, errLog *log.Logger
-var forceUpdate bool
-var addHost bool
+var (
+	infoLog, errLog *log.Logger
+	forceUpdate bool
+	addHost bool
+)
 
 func init() {
 	flag.BoolVar(&forceUpdate, "f", false, "update noip even if IP hasn't changed")
@@ -104,7 +108,7 @@ func handleNoIP(h *host, args []string) {
 		err := ioutil.WriteFile(ipfile, []byte(args[1]), 0644)
 		checkErr(err)
 	case "nohost":
-		errLog.Fatal(prefix + "noip: host does not exist")
+		errLog.Fatal(prefix + "host does not exist")
 	case "badauth":
 		errLog.Fatal(prefix + "invalid username or password")
 	case "badagent":
