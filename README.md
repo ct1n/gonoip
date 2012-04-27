@@ -4,6 +4,7 @@
 	install gonoip /usr/local/sbin
 
 	gonoip -a > /etc/gonoip.conf
+	chmod 0600 /etc/gonoip.conf
 
 Put the following in /etc/cron.hourly/gonoip
 
