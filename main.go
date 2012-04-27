@@ -34,9 +34,10 @@ func init() {
 	}
 
 	err := readConfig()
-	if !addHost && err != nil {
-		errLog.Fatal(err)
+	if addHost && os.IsNotExit(err) {
+		return
 	}
+	checkErr(err)
 }
 
 func main() {
