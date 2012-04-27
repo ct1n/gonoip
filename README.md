@@ -9,10 +9,10 @@
 Put the following in /etc/cron.hourly/gonoip
 
 	#!/bin/sh
-	/usr/local/bin/gonoip
+	/usr/local/sbin/gonoip
 
 And the following in /etc/cron.weekly/gonoip
 
 	#!/bin/sh
-	/usr/local/bin/gonoip -f
+	/usr/local/sbin/gonoip -f
 
