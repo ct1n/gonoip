@@ -10,7 +10,7 @@ import (
 func readValue(key string) string {
 	stdin := bufio.NewReader(os.Stdin)
 
-	_, err := os.Stdout.Write([]byte(key + ": "))
+	_, err := os.Stderr.Write([]byte(key + ": "))
 	checkErr(err)
 	line, _, err := stdin.ReadLine()
 	checkErr(err)
